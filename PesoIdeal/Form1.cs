@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+
 
 namespace PesoIdeal
 {
@@ -28,6 +30,13 @@ namespace PesoIdeal
             {
                 Double Altura = 0, Pesoideal = 0;
                 Altura = double.Parse(textAltura.Text);
+
+                if (textAltura.Text.Contains("."))
+                {
+                    MessageBox.Show("Erro de digitação: substitua o ponto pela vírgula.", "Peso Ideal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
 
                 if (cmbSexo.Text == "Feminino")
                 {
